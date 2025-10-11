@@ -11,4 +11,3 @@ class User:
 
     def get_user_info(self):
         print(f"first_name: {self.first_name}, last_name: {self.last_name}")
-
