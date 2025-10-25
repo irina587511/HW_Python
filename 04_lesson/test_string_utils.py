@@ -60,7 +60,7 @@ def test_contains_positive(string, symbol):
 @pytest.mark.negative
 @pytest.mark.parametrize("string, symbol", [
     ("SkyPro", "U"),
-    ("SkyPro", ""),
+    ("SkyPro", " "),
     ("", "a"),
     ])
 def test_contains_negative(string, symbol):
