@@ -19,7 +19,7 @@ def test_slow_calculator(driver):
     url = "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"
     driver.get(url)
 
-    wait = WebDriverWait(driver, 50)  # Ожидание результата до 50 секунд (без sleep)
+    wait = WebDriverWait(driver, 46)  # Ожидание результата до 50 секунд (без sleep)
 
     # Ввод значения 45 в поле с id="delay"
     delay_input = driver.find_element(By.ID, "delay")
