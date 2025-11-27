@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
+
 from pages.LoginPage import LoginPage
 from pages.ProductsPage import ProductsPage
 from pages.CartPage import CartPage

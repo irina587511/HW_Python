@@ -22,8 +22,9 @@ class FormPage:
 
     def open(self):
         self.driver.get(
-            "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
-            )
+            "https://bonigarcia.dev/selenium-webdriver-java/"
+            "data-types.html"
+        )
 
     def fill_form(self):
         for field, value in self.fields.items():

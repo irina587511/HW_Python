@@ -11,10 +11,17 @@ class CalculatorPage:
         self.result_locator = (By.CSS_SELECTOR, "#calculator .screen")
 
     def open(self):
-        self.driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
+        self.driver.get(
+            "https://bonigarcia.dev/selenium-webdriver-java/"
+            "slow-calculator.html"
+        )
 
     def set_delay(self, delay_value):
-        delay_input = self.wait.until(EC.presence_of_element_located(self.delay_input_locator))
+        delay_input = (self.wait.until
+                       (EC.presence_of_element_located
+                        (self.delay_input_locator)
+                        )
+                       )
         delay_input.clear()
         delay_input.send_keys(str(delay_value))
 
@@ -28,8 +35,18 @@ class CalculatorPage:
             self.press_button(btn)
 
     def get_result(self):
-        return self.wait.until(EC.text_to_be_present_in_element(self.result_locator, "")) or self.driver.find_element(*self.result_locator).text
+        return (
+                self.wait.until(
+                    EC.text_to_be_present_in_element(
+                        self.result_locator, ""
+                    )
+                ) or self.driver.find_element(*self.result_locator).text
+        )
 
     def wait_for_result(self, expected_result):
-        self.wait.until(EC.text_to_be_present_in_element(self.result_locator, str(expected_result)))
+        self.wait.until(
+            EC.text_to_be_present_in_element(
+                self.result_locator, str(expected_result)
+            )
+        )
         return self.driver.find_element(*self.result_locator).text
