@@ -15,14 +15,14 @@ HEADERS = {
 class ProjectsPage:
 
     @staticmethod
-    def create_project(name: str, description: str = "") -> requests.Response:
-        payload = {"name": name, "description": description}
+    def create_project(name: str) -> requests.Response:
+        payload = {"title": name}
         response = requests.post(f"{BASE_URL}/projects", json=payload, headers=HEADERS)
         return response
 
     @staticmethod
-    def update_project(project_id: str, name: str, description: str = "") -> requests.Response:
-        payload = {"name": name, "description": description}
+    def update_project(project_id: str, name: str) -> requests.Response:
+        payload = {"title": name}
         response = requests.put(f"{BASE_URL}/projects/{project_id}", json=payload, headers=HEADERS)
         return response
 
